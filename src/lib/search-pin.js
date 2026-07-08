@@ -45,4 +45,4 @@ async function searchpinterest(keyword) {
     }
 }
 
-modile.exports = searchpinterest;
+module.exports = searchpinterest;
