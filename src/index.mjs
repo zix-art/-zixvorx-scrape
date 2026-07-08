@@ -1,0 +1,35 @@
+import _aio from './lib/aio.js';
+import _berita from './lib/berita.js';
+import _deepai from './lib/deepai.js';
+import _gdrive from './lib/gdrive.js';
+import _gita from './lib/gita.js';
+import _gitagram from './lib/gitagram.js';
+import _githubStalk from './lib/githubStalk.js';
+import _googleNews from './lib/googleNews.js';
+import _pinterestSearch from './lib/pinterestSearch.js';
+import _spotifySearch from './lib/spotifySearch.js';
+import _tiktokStalk from './lib/tiktokStalk.js';
+import _web2apk from './lib/web2apk.js';
+import _ytmp3 from './lib/ytmp3.js';
+import _ytmp4 from './lib/ytmp4.js';
+import { withLogging } from './utils/logWrapper.js';
+import { setHttpConfig, getHttpConfig } from './utils/httpClient.js';
+import { setApiKey, getApiKey } from './utils/apiKeyStore.js';
+import { setDebug } from './utils/logger.js';
+
+const aio = withLogging('aio', _aio);
+const berita = withLogging('berita', _berita);
+const deepai = withLogging('deepai', _deepai);
+const gdrive = withLogging('gdrive', _gdrive);
+const gita = withLogging('gita', _gita);
+const gitagram = withLogging('gitagram', _gitagram);
+const githubStalk = withLogging('githubStalk', _githubStalk);
+const googleNews = withLogging('googleNews', _googleNews);
+const pinterestSearch = withLogging('pinterestSearch', _pinterestSearch);
+const spotifySearch = withLogging('spotifySearch', _spotifySearch);
+const tiktokStalk = withLogging('tiktokStalk', _tiktokStalk);
+const web2apk = withLogging('web2apk', _web2apk);
+const ytmp3 = withLogging('ytmp3', _ytmp3);
+const ytmp4 = withLogging('ytmp4', _ytmp4);
+
+export { aio, berita, deepai, gdrive, gita, gitagram, githubStalk, googleNews, pinterestSearch, spotifySearch, tiktokStalk, web2apk, ytmp3, ytmp4, setHttpConfig, getHttpConfig, setApiKey, getApiKey, setDebug };
