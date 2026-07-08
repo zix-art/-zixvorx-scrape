@@ -1,0 +1,34 @@
+{
+  "name": "@zxvorx/scrape",
+  "version": "1.7.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Kumpulan scraper/AI endpoint wrapper, auto-loaded dari folder src/lib",
+  "main": "./src/index.js",
+  "module": "./src/index.mjs",
+  "bin": {
+    "zx-scrape": "./bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "require": "./src/index.js",
+      "import": "./src/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/generate-esm.js",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}
