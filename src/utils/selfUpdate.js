@@ -29,8 +29,17 @@ async function checkForUpdates() {
 function selfUpdate() {
   const { execSync } = require('child_process');
   console.log(`Menjalankan: npm install ${pkg.name}@latest ...`);
-  execSync(`npm install ${pkg.name}@latest`, { stdio: 'inherit' });
-  console.log('Selesai.');
+
+  try {
+    execSync(`npm install ${pkg.name}@latest`, { stdio: 'inherit' });
+    console.log('Selesai.');
+  } catch (error) {
+    console.error(
+      `\nGagal update. Kemungkinan versi terbaru belum ke-propagate penuh di npm registry ` +
+        `Coba lagi dalam 1-2 menit, atau cek manual: npm view ${pkg.name} versions\n`
+    );
+    process.exitCode = 1;
+  }
 }
 
 module.exports = { checkForUpdates, selfUpdate };
