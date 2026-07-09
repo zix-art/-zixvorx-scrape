@@ -1,6 +1,6 @@
 {
   "name": "@zxvorx/scrape",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -18,7 +18,8 @@
   },
   "scripts": {
     "build": "node scripts/generate-esm.js",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "test": "node --test"
   },
   "files": [
     "src",
