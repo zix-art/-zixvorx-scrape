@@ -36,6 +36,7 @@ function selfUpdate() {
   } catch (error) {
     console.error(
       `\nGagal update. Kemungkinan versi terbaru belum ke-propagate penuh di npm registry ` +
+        `(wajar terjadi beberapa saat setelah publish).\n` +
         `Coba lagi dalam 1-2 menit, atau cek manual: npm view ${pkg.name} versions\n`
     );
     process.exitCode = 1;
