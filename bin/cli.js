@@ -83,7 +83,14 @@ async function main() {
   try {
     const callArgs = buildArgs(matchedName, args);
     const result = await scrapers[matchedName](...callArgs);
-    console.log(JSON.stringify(result, null, 2));
+
+    if (Buffer.isBuffer(result)) {
+      const outFile = path.join(process.cwd(), `${matchedName}-${Date.now()}.png`);
+      fs.writeFileSync(outFile, result);
+      console.log(`Hasil gambar disimpan ke: ${outFile}`);
+    } else {
+      console.log(JSON.stringify(result, null, 2));
+    }
   } catch (error) {
     console.error(`Error: ${error.message}`);
     process.exit(1);
